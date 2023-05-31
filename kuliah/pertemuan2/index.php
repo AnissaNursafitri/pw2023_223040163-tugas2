@@ -1,7 +1,4 @@
-<?php
-$nama = 'Anissa Nursafitri';
-
-?>
+<?php $nama="Anissa Nursafitri" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

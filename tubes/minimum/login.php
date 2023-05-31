@@ -1,3 +1,22 @@
+<?php
+require 'functions.php';
+
+if (isset($_POST["submit"])) {
+
+    if (login($_POST) > 0) {
+        echo "<script>
+             alert('user baru berhasil ditambahkan!');
+             </script>";
+        header('Location: janji.php');
+    } else {
+        echo mysqli_error($conn);
+    }
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +24,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registrasi</title>
+    <title>login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,600;1,100&display=swap"
@@ -30,7 +49,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto navh">
                     <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
-                    <a class="nav-link active" href="#">Tentang</a>
+                    <a class="nav-link active" href="#">Artikel</a>
                     <a class="nav-link active" href="regist.php">Daftar</a>
                     <a class="nav-link active bg-danger" style="color:white;" href="login.php">Login</a>
                 </div>
@@ -46,11 +65,11 @@
                     <p>Silahkan Login terlebih dahulu</p>
                 </div>
                 
-                </i><input type="text" name="email" id="email" placeholder="Masukan Email"><br>
+                </i><input type="text" name="email" id="email" placeholder="Masukan Email" required autocomplete="off"><br>
                 <br>
-                <input type="text" name="katasandi" id="katasandi" placeholder="Masukan Kata Sandi"><br>
+                <input type="password" name="katasandi" id="katasandi" placeholder="Masukan Kata Sandi" required autocomplete="off"><br>
                 <br>
-                <button type="submit" name="register" class="btn bg-primary">Register!</button>
+                <button name ="submit"class="btn bg-primary"><a class="link active bg-primary" style="color: white;" >login</a></button>    
                 </li>
                 </ul>
             </form>
@@ -73,6 +92,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+
+
+
 
 
 

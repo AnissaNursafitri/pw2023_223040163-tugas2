@@ -123,17 +123,20 @@ body {
     padding: 10px;
 }
 
+/*buat janji*/
+
+
 
 /*Registrasi*/
 .regist {
     margin: auto;
     width: 35%;
-    height: 85vh;
+    height: 95vh;
 
 }
 
 .form-control {
-    height: 70vh !important;
+    height: 80vh !important;
     background-color: aliceblue !important;
     text-align: center;
     transform: translateY(50px);
@@ -173,6 +176,13 @@ button {
     transform: translateY(45px);
     color: #fff !important;
 }
+
+
+/*HALAMAN ADMIN janji*/
+
+
+
+
 
 /*FOOTER*/
 footer {

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>tanyadoc</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,25 +31,26 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto navh">
                     <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
-                    <a class="nav-link active" href="#">Tentang</a>
+                    <a class="nav-link active" href="#a">Artikel</a>
                     <a class="nav-link active" href="regist.php">Daftar</a>
                     <a class="nav-link active bg-danger" style="color:white;" href="login.php">Login</a>
                 </div>
             </div>
         </div>
     </nav>
+    <!--navbar end -->
     <section class="page">
         <div class="landingpage">
             <img src="img/konsul.png" alt="img konsul">
             <h1>Segera Periksa Kesehatanmu!</h1>
             <h4>Kunjungi dan Konsultasikan kesehatanmu sekarang dengan mengunjungi website Tanyadoc. Dapatkan pelayanan
                 khusus yang bisa kamu akses di Tanyadoc!</h4>
-            <button class="btn bg-primary"><a class="link active bg-primary" style="color: white;" href="regist.html">Daftar Sekarang!</a></button>      
+            <button class="btn bg-primary"><a class="link active bg-primary" style="color: white;" href="regist.php">Daftar Sekarang!</a></button>      
         </div>
     </section>
     <!-- Artikel-->
     <section class="article">
-        <div class="kesehatan">
+        <div class="kesehatan" id="artikel">
             <h1>Artikel Kesehatan</h1>
             </div>
             <div class="sehat">
@@ -58,51 +60,70 @@
                 <img src="img/timbang.png" alt="tbbb">
 
             </div> 
-            <!-- <h4>cuci tangan</h4>
-            <p class="text text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium debitis sapiente iste eius veritatis aliquid provident? Cumque necessitatibus ipsum corporis molestias, dolores hic ab quia aperiam quae omnis autem natus.</p> -->
+            <!--artikel end-->
+
+            <!-- <div class="container-fluid kotak" style="background-color: #F9FDFE; text-align: center;">
+            <br>
+            <div class="line" id="pindah"></div>
+            <div style="display: inline-block;">
+                 <h4>bagaimana kami bisa meembantu anda?</h4>
+           </div>
+           <div class="line"></div>
+           <br>
+   </div>
+   <br>
+   <div class="container">
+    <div class="row">
+        <div class="col-sn-4 pricing-box">
+            <div class="pricing-content general">
+                <hr style="width: 30%; text-align: center; border: 5px solid #089BAB;">
+                <h5><i class="fas fa-weight" style="font-size: 5opx; margin-bottom: 12px; color: #089BAB;"></i><br>jam kerja</h5>
+                <ul>
+                    <li>senin <span style="float: right;">10.00-20.00</span></li>
+                    <li>selasa-kamis<span style="float: right;">08.00-18.00</span></li>
+                    <li>jumat <span style="float: right;">08.00-17.00</span></li>
+                    <li>sabtu<span style="float: right;">10.00-15.00</span></li>
+                    <li>minggu <span style="float: right;">09.30-17.00</span></li>
+                </li>
+                </ul>
+           </div>
+       </div>
+
+       <div class="col-sn-4 pricing-box featured-price">
+        <div class="pricing-content featured">
+            <hr style="width: 30%; text-align: center; border: 5px solid #CF6F80;">
+            <h5><i class='fas fa-calendar-plus' style="font-size: 45px; margin-bottom: 12px; color: #CF8F80;"></i><br>buat janji</h5>`
+            <ul>
+                <li style="margin-top: 55px; text-align: center;">ingin membuat janji dengan dokter?kini mudah</li>
+            </ul>
+            <div class="price-bottom"></div>
+                 <a href="login.php" class="btn btn3">buat janji</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sn-4 pricing-box">
+        <div class="pricing-content last">
+            <hr style="width: 30%; text-align: center; border: 5px solid #FBB80D;">
+            <h5> <i class="fas fa-phone-alt" style="font-size: 10px; margin-bottom: 7px; color: #FBB80D"></li><br>emergency<h/5>
+            <ul>
+                <li></li>
+                <li><i class='fas fa-phone-alt'></li>telepon <span style="float: right;">+01 010120</span><li>
+                <li><i class='fas fa-ambulance'></li>ambulance<span style="float: right;">+01 010121</span><li>
+                <li><i class="fa fa-phone"></li>go hospital<span style="float: right;">+01 010111</span><li>
+            </ul>
+</div>
+</div>
+</div>
+
+
         
-    <!-- </div>
-    </section>
+        </div>
+     -->
+    
 
-    <!-- <div class="contents">
-        <h3 class="section-title">artikel Kesehatan</h3>
-     <div class="contents-item">
-        <img src="img/giziseimbang.png">
-        <h4>cuci tangan</h4>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic fugiat provident illum itaque ducimus minima odit ipsa, aspernatur aperiam asperiores molestiae beatae mollitia libero amet nemo pariatur doloremque deserunt dolorem.</p>
-    
-     </div>
-    <div class="contents">
-        <h3 class="section-title"></h3>
-     <div class="contents-item">
-        <img src="img/giziseimbang.png">
-        <h4>cuci tangan</h4>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic fugiat provident illum itaque ducimus minima odit ipsa, aspernatur aperiam asperiores molestiae beatae mollitia libero amet nemo pariatur doloremque deserunt dolorem.</p>
-    
-     </div>
-    <div class="contents">
-        <h3 class="section-title"></h3>
-     <div class="contents-item">
-        <img src="img/giziseimbang.png">
-        <h4>cuci tangan</h4>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic fugiat provident illum itaque ducimus minima odit ipsa, aspernatur aperiam asperiores molestiae beatae mollitia libero amet nemo pariatur doloremque deserunt dolorem.</p>
-    
-     </div>
-    <div class="contents">
-        <h3 class="section-title"></h3>
-     <div class="contents-item">
-        <img src="img/giziseimbang.png">
-        <h4>cuci tangan</h4>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic fugiat provident illum itaque ducimus minima odit ipsa, aspernatur aperiam asperiores molestiae beatae mollitia libero amet nemo pariatur doloremque deserunt dolorem.</p>
-    
-     </div> -->
-       
-            
-            
-            
-            
 
-  
+
+            <!--promo-->
     <section class="menarik">
         <div class="promo">
             <h1>Penawaran Menarik</h1>
@@ -112,7 +133,6 @@
             <img src="img/obat.png" alt="obat">
             <img src="img/discount.png" alt="discount">
         </div>
-
     </section>
     <!--Footer-->
     <footer>
