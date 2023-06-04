@@ -1,4 +1,9 @@
 <?php
+// session_start();
+// if( !isset($_SESSION["login"])){
+//     header("Location: login.php");
+//     exit;
+// }
 require 'functions.php';
 
 
@@ -21,7 +26,7 @@ if (isset($_POST["submit"])) {
         echo "
             <script>
                 alert('data gagal ditambahkan');
-                document.location.href = 'backend.php';
+                document.location.href = 'janji.php';
             </script
             ";
     }
@@ -50,23 +55,24 @@ if (isset($_POST["submit"])) {
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: aliceblue !important;">
-        <div class="container-fluid">
-            <img src="img/logo-tanyadoc.png" alt="logo" width="300">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto navh">
-                    <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
-                    <a class="nav-link active" href="#a">Artikel</a>
-                    <a class="nav-link active" href="regist.php"></a>
-                    <a class="nav-link active bg-danger" style="color:white;" href="login.php">Logout</a>
-                </div>
-            </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: aliceblue !important;">
+    <div class="container-fluid">
+      <img src="img/logo-tanyadoc.png" alt="logo" width="300">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto navh">
+          <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
+          <a class="nav-link active" href="artikel.php">Artikel</a>
+          <a class="nav-link active" href="regist.php">Daftar</a>
+          <a class="nav-link active bg-danger" style="color:white;" href="login.php">Login</a>
         </div>
-    </nav>
-    <!--navbar end -->
+      </div>
+    </div>
+  </nav>
+  <!--navbar end -->
+   
 
     <!--container janji start-->
 
@@ -76,12 +82,9 @@ if (isset($_POST["submit"])) {
         <div style="display:inline-block;">
         </div>
         <div class="line2"></div>
-        <br>
-        <br>
-
         <section class="daftar">
             <div class="regist">
-                <form action="" method="post" class="form-control">
+                <form action="" method="post"enctype="multipart/form-data"class="form-control">
                     <div class="teks">
                         <h4>Silahkan Melakukan Perjanjian!</h4>
                         <h5>Langkah 1</h5>
@@ -101,7 +104,7 @@ if (isset($_POST["submit"])) {
                         </label>
                         <br>
                         <div class="select">
-                            <select id="spesialis" name="spesialis" required>
+                            <select id="spesialis" name="spesialis" required autocomplete="off">
                                 <option>Pilih Spesialis</option>
                                 <option value="Spesialis Gigi"> Spesialis Gigi</option>
                                 <option value="Spesialis Mata"> Spesialis Mata</option>
@@ -129,12 +132,35 @@ if (isset($_POST["submit"])) {
                                 <option value="14.00"> 14.00</option>
                             </select>
                             <br>
-                            <input type = "text" name ="gambar" id="nama"placeholder="masukan gambar"><br>
-        
-                            <button type="submit" name="submit" class="btn bg-primary"><a class="link active bg-primary" style="color: white;">Submit</a></button>
+                            <br>
+                            <!--select gambar start-->
+                            <div class="fore-group">
+                            <h5>Langkah 4</h5>
+                            <label for ="gambar">Pilih Foto Anda </label><br>
+                            <input type = "file" name ="gambar" id="gambar"><br> 
+                            <button type="file" name="submit" class="btn bg-primary"><a class="link active bg-primary" style="color: white;">Submit</a></button> 
                         </div>
                     </div>
                     <br>
+
+ <!-- Footer
+ <footer>
+      <div class="kaki text-center">
+        <h4>Tanyadoc</h4>
+        <p>Jika kamu memiliki kendala silahkan hubungi contact dibawah ini!</p>
+        <span><i class="fa-brands fa-facebook"></i></span>
+        <span><i class="fa-brands fa-instagram"></i></span>
+        <span><i class="fa-brands fa-linkedin"></i></i></span>
+        <hr>
+      </div>
+      <div class="copyright">
+        <p><i class="fa-regular fa-copyright"></i> copyright tanyadoc 2023, design by. Anissa Nursafitri</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+                     -->
+                    
                 
     
                     

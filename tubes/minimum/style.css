@@ -1,6 +1,6 @@
 body,
 html {
-    background-color: white;
+    background-color:#092679;
     font-family: 'Playfair Display', serif;
     overflow-x: hidden !important;
     margin: 0px !important;
@@ -168,8 +168,9 @@ form input {
 .teks {
     transform: translateY(30px);
 }
-.teks p{
-    color:black;
+
+.teks p {
+    color: black;
 }
 
 button {
@@ -177,8 +178,27 @@ button {
     color: #fff !important;
 }
 
+/*janji*/
 
-/*HALAMAN ADMIN janji*/
+
+/*HALAMAN backend*/
+tr {
+    width: 400px;
+    height: 100px;
+    border: 10px solid blue;
+    display: flex;
+    justify-content: center;
+
+}
+
+th {
+    width: 70px;
+    height: 70px;
+}
+
+/*admin*/
+
+
 
 
 
@@ -194,14 +214,16 @@ footer {
 
 }
 
+
 .kaki {
     transform: translateY(35px);
     width: 80%;
     margin: auto;
 
 }
-.kaki p{
-    color:black;
+
+.kaki p {
+    color: black;
 }
 
 .kaki span {
@@ -211,8 +233,9 @@ footer {
 .copyright {
     transform: translateY(40px);
 }
-.copyright p{
-    color:black;
+
+.copyright p {
+    color: black;
 }
 
 /*sidebar*/
@@ -520,8 +543,8 @@ p {
         width: 35%;
         height: 150px;
     }
-    
-    
+
+
 }
 
 
@@ -570,12 +593,13 @@ p {
         margin-top: 5px;
 
     }
+
     .form-login li {
         transform: translateX(-50px);
         font-size: 5px;
         margin-top: 5px;
 
     }
-    
+
 
 }

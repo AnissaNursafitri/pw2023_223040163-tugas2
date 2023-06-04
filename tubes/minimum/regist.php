@@ -6,8 +6,9 @@ if (isset($_POST["submit"])) {
     if (registrasi($_POST) > 0) {
         echo "<script>
              alert('user baru berhasil ditambahkan!');
+             document.location.href = 'login.php';
              </script>";
-        header('Location: login.php');
+        
     } else {
         echo mysqli_error($conn);
     }
