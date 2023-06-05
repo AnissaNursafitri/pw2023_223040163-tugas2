@@ -1,12 +1,30 @@
 <?php
 session_start();
+require 'functions.php';
 
+// cek cookie
+if( isset($_COOKIE['id']) && isset($_COOKIE['key']) ){
+    $id = $_COOKIE['id'];
+    $key = $_COOKIE['key'];
+
+    // ambil username berdsarkan id
+    $result = mysqli_query($conn, "SELECT username FROM usertable WHERE
+    id = $id");
+    $row = mysqli_fetch_assoc($result);
+
+    // cek cookie dan username
+    if( $key === hash('sha256', $row['username']) ){
+        $_SESSION['login'] = true;
+    }
+}
+    
 if ( isset($_SESSION["login"])) {
     header("Location: backend.php");
     exit;
 }
 
-require 'functions.php';
+
+
 
 //ketika tombol login ditekan
 if (isset($_POST["login"])) {
@@ -37,10 +55,11 @@ if (isset($_POST["login"])) {
             $_SESSION["login"] = true;
 
             //cek remember me
-            // if( isset($_POST['remember']) ){
-            //     //buat cookie
-            //     setcookie('login', 'true', time() + 60);
-            // }
+            if( isset($_POST['remember']) ){
+                //buat cookie
+                setcookie('id', $row['id'], time() + 60);
+                setcookie('key', hash('sha384' ,$row['username']));
+            }
 
             header("Location: janji.php");
             exit;
@@ -100,10 +119,14 @@ if (isset($_POST["login"])) {
                     <h2>Login</h2>
                     <p>Silahkan Login terlebih dahulu</p>
                 </div>
-                </i><input type="text" name="username" id="username" placeholder="Masukan Username" required autocomplete="off"><br>
+                
+                <input type="text" name="username" id="username" placeholder="Masukan Username" required autocomplete="off"><br>
                 <br>
                 <input type="password" name="password" id="password" placeholder="Masukan Kata Sandi" required autocomplete="off"><br>
-                <button name="login" type="login" class="btn bg-primary"><a class="link active bg-primary" style="color: white;">login</a></button>
+                <br>
+                <input type="checkbox" style="width: 20px;"name="remember" id="remember">
+                <label for="remember" style="transform: translateY(33px); text-align: center;"> Remember Me</label>
+                <button name="login" type="login" class="btn bg-primary"><a class="link active bg-primary" style="color: white; ">login</a></button>
             </form>
         </div>
     </section>

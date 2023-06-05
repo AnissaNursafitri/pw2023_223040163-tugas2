@@ -1,10 +1,10 @@
 <?php  
-session_start();
+// session_start();
 
-if( !isset($_SESSION["login"])){
-    header("Location: login.php");
-    exit;
-}
+// if( !isset($_SESSION["login"])){
+//     header("Location: login.php");
+//     exit;
+// }
 require 'functions.php';
 
 
@@ -51,7 +51,7 @@ require 'functions.php';
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="index.php"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="admin.php"><i class="fa-solid fa-house"></i></a></li>
         <li class="active"><a href="backend.php"><i class="fa-solid fa-users"></i></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

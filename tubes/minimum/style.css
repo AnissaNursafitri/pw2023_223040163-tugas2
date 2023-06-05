@@ -165,7 +165,6 @@ form input {
     text-align: center;
 }
 
-
 .teks {
     transform: translateY(30px);
 }
@@ -179,30 +178,17 @@ form input {
 }
 
 button {
-    transform: translateY(105px);
-    color: #fff !important;
+    transform: translateY(150px);
+    color: black!important;
 }
 
-/*profile*/
 
 
 
-/*HALAMAN backend*/
-tr {
-    width: 400px;
-    height: 100px;
-    border: 10px solid blue;
-    display: flex;
-    justify-content: center;
 
-}
 
-th {
-    width: 70px;
-    height: 70px;
-}
 
-/*admin*/
+
 
 
 
