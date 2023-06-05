@@ -165,20 +165,26 @@ form input {
     text-align: center;
 }
 
+
 .teks {
     transform: translateY(30px);
 }
-
 .teks p {
     color: black;
 }
 
+.label teks{
+    transform: translateY(20px);
+    font-size: 20px;
+}
+
 button {
-    transform: translateY(45px);
+    transform: translateY(105px);
     color: #fff !important;
 }
 
-/*janji*/
+/*profile*/
+
 
 
 /*HALAMAN backend*/
@@ -197,6 +203,8 @@ th {
 }
 
 /*admin*/
+
+
 
 
 

@@ -1,9 +1,11 @@
 <?php
-// session_start();
-// if( !isset($_SESSION["login"])){
-//     header("Location: login.php");
-//     exit;
-// }
+session_start();
+
+if( !isset($_SESSION["login"])){
+    header("Location: login.php");
+    exit;
+}
+
 require 'functions.php';
 
 
@@ -41,7 +43,6 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>tambah data</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,7 +105,7 @@ if (isset($_POST["submit"])) {
                         </label>
                         <br>
                         <div class="select">
-                            <select id="spesialis" name="spesialis" required autocomplete="off">
+                            <select id="spesialis" name="spesialis" required>
                                 <option>Pilih Spesialis</option>
                                 <option value="Spesialis Gigi"> Spesialis Gigi</option>
                                 <option value="Spesialis Mata"> Spesialis Mata</option>
@@ -122,7 +123,7 @@ if (isset($_POST["submit"])) {
                                 <h5>Langkah 3</h5>
                             </label>
                             <br>
-                            <select id="pilih waktu" name="waktu" required>
+                            <select id="waktu" name="waktu" required>
                                 <option>Pilih Waktu</option>
                                 <option value="08.00"> 08.00</option>
                                 <option value="09.00"> 09.00</option>
@@ -143,8 +144,8 @@ if (isset($_POST["submit"])) {
                     </div>
                     <br>
 
- <!-- Footer
- <footer>
+ <!-- Footer start-->
+ <!-- <footer>
       <div class="kaki text-center">
         <h4>Tanyadoc</h4>
         <p>Jika kamu memiliki kendala silahkan hubungi contact dibawah ini!</p>
@@ -157,9 +158,9 @@ if (isset($_POST["submit"])) {
         <p><i class="fa-regular fa-copyright"></i> copyright tanyadoc 2023, design by. Anissa Nursafitri</p>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
 
-                     -->
+<!--Footer end-->
                     
                 
     

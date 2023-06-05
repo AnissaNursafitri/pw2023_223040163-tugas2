@@ -1,9 +1,11 @@
 <?php
-// session_start();
-// if( !isset($_SESSION["login"]) ){
-//     header("Location: login.php");
-//     exit;
-// }
+session_start();
+
+if( !isset($_SESSION["login"]) ){
+    header("Location: login.php");
+    exit;
+}
+
 require 'functions.php';
 $table_janji = query("SELECT * FROM table_janji");
 
@@ -14,16 +16,13 @@ if(isset($_POST["cari"]) ){
 }
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>halaman admin backend</title>
+    <title>backend</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -34,7 +33,7 @@ if(isset($_POST["cari"]) ){
 </head>
 
 <body>
-
+<!--navbar start-->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -61,86 +60,66 @@ if(isset($_POST["cari"]) ){
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="janji.php"><i class="fa-solid fa-user-plus"></i></span> Tambah Data</a></li>
-        <li><a href="logout.php"><i class="fa-sharp fa-solid fa-right-from-bracket"></i></span> Logout</a></li>
-
+       <li><a href="logout.php"><i class="fa-sharp fa-solid fa-right-from-bracket"></i></span> Logout</a></li>
       </ul>
     </div>
   </div>
 </nav>
+<!--navbar end-->
     
   
 
 
-<h4>Daftar Pasien</h4>
+<h1>Daftar Pasien</h1>
+<div class="main-table" id="main-table">
+    <table class="table table-hover text-center">
+        <thead>
+            <tr>
+            <th>No.</th>
+            <th>nama</th>
+            <th>spesialis</th>
+            <th>waktu</th>
+            <th colspan="3">aksi</th>
+            </tr>
 
-<br><br>
-   
- <br>
- <table border ="5" cellpadding="2" cellspacing="4" margin-left= "25px">   
-    
-   
-   
-   
+            <?php $i = 1; ?>
+            <?php foreach ($table_janji as $row) : ?>
+            <tr>
+              <td><?= $i; ?></td>
+              <td><?= $row["nama"]; ?></td>
+              <td><?= $row["spesialis"]; ?></td>
+              <td><?= $row["waktu"]; ?></td>  
+                <td style="width: 3rem">
+                  <a href="ubah.php?id=<?= $row["id"];?>" class= "btn btn-primaryd d-flex align-items-center justify-content-center box-shadow">
+                  <i class="fa-solid fa-pen"></i>
+                </a>
+                </td>
+                <td style="width: 3rem">
+                  <a href="detailpsn.php" class= "btn btn-primaryd d-flex align-items-center justify-content-center box-shadow">
+                  <i class="fa-solid fa-eye"></i>
+                </a>
+                </td>
+                <td style="width: 3rem">
+                  <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm ('apakah anda yakin ingin menghapus?');" class= "btn btn-primaryd d-flex align-items-center justify-content-center box-shadow">
+                  <i class="fa-solid fa-trash"></i>
+                </a>
+                </td>
+            </tr>
+            <?php $i++; ?>
+            <?php endforeach; ?>
 
-<tr>
-    <th>No.</th>
-    <th>Aksi</th>
-    <th>Nama</th>
-    <th>NIK</th>
-    <th>Email</th>
-    <th>Spesialis</th>
-    <th>Waktu</th>
-    <th>Gambar</th>
-   
-</tr> 
-
-<?php $i = 1; ?>
-<?php foreach ($table_janji as $row) : ?>
-<tr>
-    <td><?= $i; ?></td>
-    <td>
-        <a href="ubah.php?id=<?= $row["id"];?>">Ubah</a>
-        <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm ('apakah anda yakin ingin menghapus?');">Hapus</a>
-    </td>
-    
-    <td><?= $row["nama"]; ?></td>
-    <td><?= $row["NIK"]; ?></td>
-    <td><?= $row["email"]; ?></td>
-    <td><?= $row["spesialis"]; ?></td>
-    <td><?= $row["waktu"]; ?></td>  
-     
-    <td><img src="img/<?=$row["gambar"]; ?>" width="50"></td>
-       
-</tr>
-<?php $i++; ?>
-<?php endforeach; ?>
-
-</table>
-<br>
-
-<!-- Footer
-    <footer>
-        <div class="kaki text-center">
-            <h4>Tanyadoc</h4>
-            <p>Jika kamu memiliki kendala silahkan hubungi contact dibawah ini!</p>
-            <span><i class="fa-brands fa-facebook"></i></span>
-            <span><i class="fa-brands fa-instagram"></i></span>
-            <span><i class="fa-brands fa-linkedin"></i></i></span>
-            <hr>
-        </div>
-        <div class="copyright">
-            <p><i class="fa-regular fa-copyright"></i> copyright tanyadoc 2023, design by. Anissa Nursafitri</p>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script> -->
-
-
-       
-
-
-
+            <!-- <div class="right d-flex flex-column h-100 mt-5 pt-5">
+              <div class="right-table w-100 d-flex justify-content-center flex column">
+                <div class="card box-shadow bg-primary text-white">
+                  <div class="card-body">
+                    <h5 class= "card title d-flex justify-content-between">
+                    <span class="text"> total</span>
+                    <span class="material-icons sharp text-white"> info</span>
+                    </h5>
+                    <h6 class="card-subtitle mb-2">total jumlah pasien</h6>
+                    <div class="card-text d-flex">
+                      <h2>10</h2>
+              </div>
+            </div> -->
 </body>
 </html>

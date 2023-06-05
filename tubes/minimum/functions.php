@@ -3,8 +3,7 @@
 $conn = mysqli_connect('localhost', 'root',  '', 'tanyadoc');
 
 
-function query($query)
-{
+function query($query) {
   global $conn;
   $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
   $rows = [];
@@ -14,9 +13,8 @@ function query($query)
   return $rows;
 }
 
-//SAVE DATA//
-function tambah($data)
-{
+//TAMBAH DATA//
+function tambah($data) {
   global $conn;
 
   $nama = htmlspecialchars($data["nama"]);
@@ -42,8 +40,8 @@ function tambah($data)
   return mysqli_affected_rows($conn);
 }
 
-function upload()
-{
+//UPLOAD DATA//
+function upload() {
 
   $namaFile = $_FILES['gambar']['name'];
   $ukuranFile = $_FILES['gambar']['size'];
@@ -88,21 +86,15 @@ function upload()
   return $namaFileBaru;
 }
 
-
-
-
 //DELETE DATA
-function hapus($id)
-{
+function hapus($id) {
   global $conn;
   mysqli_query($conn, "DELETE  FROM table_janji WHERE id = $id");
   return mysqli_affected_rows($conn);
 }
 
 // UBAH DATA
-function ubah($data)
-{
-
+function ubah($data) {
   global $conn;
 
   $id = $data["id"];
@@ -135,8 +127,7 @@ function ubah($data)
 }
 
 //SEARCHING
-function cari($keyword)
-{
+function cari($keyword) {
   $query = "SELECT * FROM table_janji
               WHERE
               nama LIKE  '%$keyword%' OR
@@ -151,8 +142,7 @@ function cari($keyword)
 }
 
 // REGISTRASI
-function registrasi($data)
-{
+function registrasi($data) {
   global $conn;
 
   $username = strtolower(stripslashes($data["username"]));
@@ -174,8 +164,6 @@ function registrasi($data)
          </script>";
     return false;
   }
-
-
 
   // cek konfirmasi password
   if ($password !== $password2) {

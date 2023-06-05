@@ -14,10 +14,7 @@ if (isset($_POST["submit"])) {
     }
 }
 
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +34,7 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-    <!-- Navbar -->
+    
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: aliceblue !important;">
         <div class="container-fluid">
@@ -48,14 +45,16 @@ if (isset($_POST["submit"])) {
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto navh">
                     <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
-                    <a class="nav-link active" href="#">Artikel</a>
+                    <a class="nav-link active" href="artikel.php">Artikel</a>
                     <a class="nav-link active" href="regist.php">Daftar</a>
                     <a class="nav-link active bg-danger" style="color:white;" href="login.php">Login</a>
                 </div>
             </div>
         </div>
     </nav>
+    <!--NAVBAR END-->
 
+    <!--FORM REGISTRASI START-->
     <section class="daftar">
         <div class="regist">
             <form action="" method="post" class="form-control">
@@ -73,17 +72,13 @@ if (isset($_POST["submit"])) {
                 <input type="password" name="password" id="password" placeholder="Password" required autocomplete="off"><br>
                 <br>
                 <input type="password" name="password2" id="password" placeholder="Konfirmasi Password" required autocomplete="off"><br>
-                <br>
-
                 <button name="submit" type="submit" class="btn bg-primary"><a class="link active bg-primary" style="color: white;">Register!</a></button>
-
-
-                </li>
-                </ul>
             </form>
         </div>
     </section>
-    <!--Footer-->
+    <!--FORM REGISTRASI START-->
+
+    <!--Footer start-->
     <footer>
         <div class="kaki text-center">
             <h4>Tanyadoc</h4>
@@ -99,7 +94,7 @@ if (isset($_POST["submit"])) {
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-
+   <!--Footer end-->
 
 
 </body>

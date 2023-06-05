@@ -1,3 +1,18 @@
+<?php 
+session_start();
+
+if( !isset($_SESSION["login"])){
+    header("Location: login.php");
+    exit;
+}
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,18 +72,6 @@
       <img src="img/timbang.png" alt="tbbb">
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!--promo-->
     <section class="menarik">

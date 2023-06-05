@@ -1,10 +1,10 @@
 <?php  
-// session_start();
+session_start();
 
-// if( !isset($_SESSION["login"])){
-//     header("Location: login.php");
-//     exit;
-// }
+if( !isset($_SESSION["login"])){
+    header("Location: login.php");
+    exit;
+}
 require 'functions.php';
 
 
@@ -51,7 +51,7 @@ require 'functions.php';
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="admin.php"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="index.php"><i class="fa-solid fa-house"></i></a></li>
         <li class="active"><a href="backend.php"><i class="fa-solid fa-users"></i></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -65,16 +65,16 @@ require 'functions.php';
 <!--END NAVBAR-->
 
 
-
+<!--CONTAINER START-->
   <div class="container text-center">    
   <div class="row">
     <div class="col-sm-3 well">
       <div class="well">
-        <p><a href="#">My Profile</a></p>
+        <p><a href="#">admin</a></p>
         <img src="img/profile.jpeg" class="img-circle" height="65" width="65" alt="Avatar">
       </div>
       <div class="well">
-        <p><a href="#">Interests</a></p>
+        <p><a href="#">hemm</a></p>
         <p>
           <span class="label label-default">masyaallah</span>
           <span class="label label-primary">ruwet</span>
@@ -89,12 +89,12 @@ require 'functions.php';
         <p><strong>Ey!</strong></p>
         jaga kesehatan ya dik adik
       </div>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+      <p><a href="artikel.php">artikel</a></p> 
     </div>
+    <!--CONTAINER END-->
+
+    <!--SPESIALIS START-->
     <div class="col-sm-7">
-    
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
@@ -165,26 +165,8 @@ require 'functions.php';
         </div>
       </div>     
     </div>
-    <div class ="left d-flex"
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    <!--SPESIALIS END-->
+     
 
 </body>
 </html>
