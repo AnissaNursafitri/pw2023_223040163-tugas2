@@ -93,7 +93,7 @@ if (isset($_POST["login"])) {
 <body>
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: aliceblue !important;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #61a5c2 !important;">
         <div class="container-fluid">
             <img src="img/logo-tanyadoc.png" alt="logo" width="300">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

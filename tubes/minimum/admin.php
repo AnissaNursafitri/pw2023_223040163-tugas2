@@ -56,7 +56,7 @@ require 'functions.php';
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="janji.php"><i class="fa-solid fa-user-plus"></i></span>Tambah Data</a></li>
-        <li><a href="login.php"><i class="fa-sharp fa-solid fa-right-from-bracket"></i></span> Logout</a></li>
+        <li><a href="logout.php"><i class="fa-sharp fa-solid fa-right-from-bracket"></i></span> Logout</a></li>
       </ul>
     </div>
   </div>

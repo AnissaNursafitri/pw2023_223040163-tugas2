@@ -50,13 +50,14 @@ if (isset($_POST["submit"])) {
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 </head>
 
 <body>
     <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: aliceblue !important;">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #61a5c2 !important;">
     <div class="container-fluid">
       <img src="img/logo-tanyadoc.png" alt="logo" width="300">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,6 +141,7 @@ if (isset($_POST["submit"])) {
                             <label for ="gambar">Pilih Foto Anda </label><br>
                             <input type = "file" name ="gambar" id="gambar"><br> 
                             <button type="file" name="submit" class="btn bg-primary"><a class="link active bg-primary" style="color: white;">Submit</a></button> 
+                            
                         </div>
                     </div>
                     <br>
@@ -163,28 +165,6 @@ if (isset($_POST["submit"])) {
 <!--Footer end-->
                     
                 
-    
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </body>

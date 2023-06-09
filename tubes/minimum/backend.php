@@ -7,7 +7,21 @@ if( !isset($_SESSION["login"]) ){
 }
 
 require 'functions.php';
-$table_janji = query("SELECT * FROM table_janji");
+
+//pagination
+//konfigurasi
+$jumlahDataPerhalaman = 3;
+$jumlahData = count(query("SELECT * FROM table_janji"));
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman);
+$halamanAktif = ( isset($_GET["page"]) ) ? $_GET["page"] : 1;
+$awalData = ( $jumlahDataPerhalaman * $halamanAktif ) - $jumlahDataPerhalaman;
+
+
+
+
+
+
+$table_janji = query("SELECT * FROM table_janji LIMIT $awalData, $jumlahDataPerhalaman");
 
 //tombol cari diekan
 if(isset($_POST["cari"]) ){
@@ -24,6 +38,7 @@ if(isset($_POST["cari"]) ){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>backend</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="ubah.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -51,14 +66,16 @@ if(isset($_POST["cari"]) ){
       </ul>
       <form action ="" method ="post"class="navbar-form navbar-right" role="search">
         <div class="form-group input-group">
-          <input type="text" name ="keyword"class="form-control" autofocus placeholder="Search.." autocomplete="off">
+          <input type="text" name ="keyword"class="form-control" autofocus placeholder="Search pasien(s).."autofocus autocomplete="off" id="keyword">
           <span class="input-group-btn">
-            <button type="submit" name ="cari"class="btn btn-default" type="button">
+            <button type="submit" name ="cari" id="tombol-cari" class="btn btn-default" type="button">
               <span class="glyphicon glyphicon-search"></span>
             </button>
           </span>        
         </div>
       </form>
+
+      <div id="container">
       <ul class="nav navbar-nav navbar-right">
        <li><a href="logout.php"><i class="fa-sharp fa-solid fa-right-from-bracket"></i></span> Logout</a></li>
       </ul>
@@ -73,34 +90,54 @@ if(isset($_POST["cari"]) ){
 <h1>Daftar Pasien</h1>
 <div class="main-table" id="main-table">
     <table class="table table-hover text-center">
+      <ul class="pagination">
+        <li class="page-item ">
+        <a href="?page=<?= $halamanAktif - 1; ?>">&laquo;</a>
+          <a href="?page=1" class="page-link bg-primary border-none box-shadow text-white">1</a>
+        </li>
+        <li class="page-item ">
+          <a href="?page=2" class="page-link bg-primary border-none box-shadow text-white">2</a>
+        </li>
+        <li class="page-item ">
+          <a href="?page=3" class="page-link bg-primary border-none box-shadow text-white">3</a>
+        </li>
+        <li class="page-item ">
+          <a href="?page=4" class="page-link bg-primary border-none box-shadow text-white">4</a>
+        </li>
+        <li class="page-item ">
+          <a href="?page=3" class="page-link bg-primary border-none box-shadow text-white">5</a>
+          <a href="?page=<?= $halamanAktif + 1; ?>">&raquo;</a>
+        </li>
+
+      </ul>
         <thead>
             <tr>
             <th>No.</th>
-            <th>nama</th>
-            <th>spesialis</th>
-            <th>waktu</th>
-            <th colspan="3">aksi</th>
+            <th>Nama</th>
+            <th>Spesialis</th>
+            <th>Waktu</th>
+            <th colspan="3">Aksi</th>
             </tr>
 
             <?php $i = 1; ?>
             <?php foreach ($table_janji as $row) : ?>
             <tr>
-              <td><?= $i; ?></td>
-              <td><?= $row["nama"]; ?></td>
-              <td><?= $row["spesialis"]; ?></td>
-              <td><?= $row["waktu"]; ?></td>  
-                <td style="width: 3rem">
-                  <a href="ubah.php?id=<?= $row["id"];?>" class= "btn btn-primaryd d-flex align-items-center justify-content-center box-shadow">
+              <th><?= $i; ?></th>
+              <th><?= $row["nama"]; ?></th>
+              <th><?= $row["spesialis"]; ?></th>
+              <th><?= $row["waktu"]; ?></th>  
+                <td style="width: 4rem">
+                  <a href="ubah.php?id=<?= $row["id"];?>">
                   <i class="fa-solid fa-pen"></i>
                 </a>
                 </td>
-                <td style="width: 3rem">
-                  <a href="detailpsn.php" class= "btn btn-primaryd d-flex align-items-center justify-content-center box-shadow">
+                <td style="width: 4rem">
+                  <a href="detailpsn.php">
                   <i class="fa-solid fa-eye"></i>
                 </a>
                 </td>
-                <td style="width: 3rem">
-                  <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm ('apakah anda yakin ingin menghapus?');" class= "btn btn-primaryd d-flex align-items-center justify-content-center box-shadow">
+                <td style="width: 4rem">
+                  <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm ('apakah anda yakin ingin menghapus?');">
                   <i class="fa-solid fa-trash"></i>
                 </a>
                 </td>
@@ -108,6 +145,10 @@ if(isset($_POST["cari"]) ){
             <?php $i++; ?>
             <?php endforeach; ?>
 
+            </table>
+</div>
+<!-- <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+<script src="js/script.js"></script> -->
             <!-- <div class="right d-flex flex-column h-100 mt-5 pt-5">
               <div class="right-table w-100 d-flex justify-content-center flex column">
                 <div class="card box-shadow bg-primary text-white">

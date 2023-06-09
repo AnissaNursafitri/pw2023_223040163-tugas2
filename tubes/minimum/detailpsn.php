@@ -6,6 +6,10 @@
 //     exit;
 // }
 
+require 'functions.php'
+
+
+
 
 ?>
 
@@ -21,37 +25,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>backend</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="ubah.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" >
-</head>
-<style>
-.container {
-  position: relative;
-  width: 50%;
-}
+                                                                                                                                  
 
-.image {
-  display: block;
-  width: 60%;
-  height: auto;
-}
-
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-30%, -30%);
-  -ms-transform: translate(-30%, -30%);
-  transform: translate(-30%, -30%);
-  text-align: center;
-}
-</style>
 </head>
 
 <body>
@@ -79,16 +60,30 @@
   </div>
 </nav>
 
-<!--END NAVBAR-->
-<h2>Detail Pasien</h2>
-<div class="container">
-  <img src="img/dok1.jpg" alt="image" class="image">
+<!-- END NAVBAR-->
+ <h2>Detail Pasien</h2>
+<div class="container"> 
+<form action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?= $psn["id"]; ?>">
+        <input type="hidden" name="gambarLama" value="<?= $psn["gambar"]; ?>"> 
+<img src="img/dok1.jpg" alt="image" class="image"><br>
+<input type = "file" name ="gambar" id="gambar"><br>
+<a href="ubah.php?id=38"button type="submit" name="submit" class="btn bg-primary" >Edit</a></button><br>
 
-              <img src="img/<?= $psn['gambar']; ?>" width="500"><br>
+  <div class="col-md-4" >
+    <div class="d-flex justify-content-center align-items-end flex-column h-100 text-right">
+      <h2 class="text-muted">info</h2>
+      <h5>mustika</h5>
+      <h5>ika@gmail.com</h5>
+      <h5>spesialis mata</h5>
+      <h5>12.00</h5>
+    </div>
+  </div>
+
+               <!-- <img src="img/<?= $psn['gambar']; ?>" width="500"><br> -->
   
-              <br>
-              <input type = "file" name ="gambar" id="gambar"><br>
-              <a href="ubah.php?id=35"button type="submit" name="submit" class="btn bg-primary" >Edit</a></button>
+              
+              
 </div>
 
 

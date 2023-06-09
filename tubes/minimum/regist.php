@@ -36,7 +36,7 @@ if (isset($_POST["submit"])) {
 <body>
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: aliceblue !important;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #61a5c2 !important;">
         <div class="container-fluid">
             <img src="img/logo-tanyadoc.png" alt="logo" width="300">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +72,7 @@ if (isset($_POST["submit"])) {
                 <input type="password" name="password" id="password" placeholder="Password" required autocomplete="off"><br>
                 <br>
                 <input type="password" name="password2" id="password" placeholder="Konfirmasi Password" required autocomplete="off"><br>
-                <button name="submit" type="submit" class="btn bg-primary"><a class="link active bg-primary" style="color: white;">Register!</a></button>
+                <button name="submit" type="submit" class="btn bg-primary"><a class="link active bg-primary" style="color: white">Register!</a></button>
             </form>
         </div>
     </section>
