@@ -154,7 +154,9 @@ thead tr th{
   
 }
 
-/*PAGINATION*/
+form input{
+  width: 10%;
+}
 
 /* 800px */
 @media (max-width: 800px) {

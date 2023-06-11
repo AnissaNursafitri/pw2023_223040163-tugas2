@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if( !isset($_SESSION["login"])){
+if (!isset($_SESSION["login"])) {
     header("Location: login.php");
     exit;
 }
@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
         echo "
             <script>
                 alert('data berhasil ditambahkan');
-                document.location.href = 'backend.php';
+                document.location.href = 'index.php';
             </script>
         ";
     } else {
@@ -57,24 +57,29 @@ if (isset($_POST["submit"])) {
 
 <body>
     <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #61a5c2 !important;">
-    <div class="container-fluid">
-      <img src="img/logo-tanyadoc.png" alt="logo" width="300">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto navh">
-          <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
-          <a class="nav-link active" href="artikel.php">Artikel</a>
-          <a class="nav-link active" href="regist.php">Daftar</a>
-          <a class="nav-link active bg-danger" style="color:white;" href="login.php">Login</a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #61a5c2 !important;">
+        <div class="container-fluid">
+            <img src="img/logo-tanyadoc.png" alt="logo" width="300">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto navh">
+                    <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
+                    <a class="nav-link active" href="artikel.php">Artikel</a>
+                    <a class="nav-link active" href="regist.php">Daftar</a>
+                    <?php if (isset($_SESSION['login'])) : ?>
+                        <a class="nav-link active" href="janji.php">Janji</a>
+                        <a class="nav-link active bg-danger" style="color:white;" href="logout.php">Logout</a>
+                    <?php else : ?>
+                        <a class="nav-link active bg-success" style="color:white;" href="login.php">Login</a>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
-  <!--navbar end -->
-   
+    </nav>
+    <!--navbar end -->
+
 
     <!--container janji start-->
 
@@ -86,14 +91,14 @@ if (isset($_POST["submit"])) {
         <div class="line2"></div>
         <section class="daftar">
             <div class="regist">
-                <form action="" method="post"enctype="multipart/form-data"class="form-control">
+                <form action="" method="post" enctype="multipart/form-data" class="form-control">
                     <div class="teks">
                         <h4>Silahkan Melakukan Perjanjian!</h4>
                         <h5>Langkah 1</h5>
                     </div>
-                    <input type="text" name="nama" id="nama" placeholder="Masukan nama" required autocomplete="off"><br>
+                    <input type="text" name="nama" id="nama" placeholder="Masukan nama Pasien" required autocomplete="off"><br>
                     <br>
-                    <input type="text" name="email" id="email" placeholder="Masukan Email" required autocomplete="off"><br>
+                    <input type="text" name="email" id="email" placeholder="Masukan Email Pasien" required autocomplete="off"><br>
                     <br>
                     <input type="text" name="nik" id="nik" placeholder="Masukan NIK" required autocomplete="off"><br>
                     <br>
@@ -115,7 +120,7 @@ if (isset($_POST["submit"])) {
                             </select>
                         </div>
                         <br>
-    
+
                         <!--select spesialiast end-->
 
                         <!--select waktu start-->
@@ -135,36 +140,36 @@ if (isset($_POST["submit"])) {
                             </select>
                             <br>
                             <br>
-                            <!--select gambar start-->
-                            <div class="fore-group">
-                            <h5>Langkah 4</h5>
-                            <label for ="gambar">Pilih Foto Anda </label><br>
-                            <input type = "file" name ="gambar" id="gambar"><br> 
-                            <button type="file" name="submit" class="btn bg-primary"><a class="link active bg-primary" style="color: white;">Submit</a></button> 
-                            
+
+
+                            <button type="file" name="submit" class="btn bg-primary mb-5"><a class="link active bg-primary" style="color: white;">Submit</a></button>
+
                         </div>
                     </div>
-                    <br>
+            </div>
+        </section>
+    </div>
+    <br>
 
- <!-- Footer start-->
- <!-- <footer>
-      <div class="kaki text-center">
-        <h4>Tanyadoc</h4>
-        <p>Jika kamu memiliki kendala silahkan hubungi contact dibawah ini!</p>
-        <span><i class="fa-brands fa-facebook"></i></span>
-        <span><i class="fa-brands fa-instagram"></i></span>
-        <span><i class="fa-brands fa-linkedin"></i></i></span>
-        <hr>
-      </div>
-      <div class="copyright">
-        <p><i class="fa-regular fa-copyright"></i> copyright tanyadoc 2023, design by. Anissa Nursafitri</p>
-      </div>
+
+    <footer class="mt-5">
+        <div class="kaki text-center">
+            <h4>Tanyadoc</h4>
+            <p>Jika kamu memiliki kendala silahkan hubungi contact dibawah ini!</p>
+            <span><i class="fa-brands fa-facebook"></i></span>
+            <span><i class="fa-brands fa-instagram"></i></span>
+            <span><i class="fa-brands fa-linkedin"></i></i></span>
+            <hr>
+        </div>
+        <div class="copyright">
+            <p><i class="fa-regular fa-copyright"></i> copyright tanyadoc 2023, design by. Anissa Nursafitri</p>
+        </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-<!--Footer end-->
-                    
-                
+    <!--Footer end-->
+
+
 
 
 </body>

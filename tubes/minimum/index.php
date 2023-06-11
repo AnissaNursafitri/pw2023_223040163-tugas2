@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +31,12 @@
           <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
           <a class="nav-link active" href="artikel.php">Artikel</a>
           <a class="nav-link active" href="regist.php">Daftar</a>
-          <a class="nav-link active bg-danger" style="color:white;" href="login.php">Login</a>
+          <?php if (isset($_SESSION['login'])) : ?>
+            <a class="nav-link active" href="janji.php">Janji</a>
+            <a class="nav-link active bg-danger" style="color:white;" href="logout.php">Logout</a>
+          <?php else : ?>
+            <a class="nav-link active bg-success" style="color:white;" href="login.php">Login</a>
+          <?php endif; ?>
         </div>
       </div>
     </div>

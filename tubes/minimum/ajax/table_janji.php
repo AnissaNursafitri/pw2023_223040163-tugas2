@@ -1,4 +1,4 @@
-<!-- <?php 
+<?php 
 require '../functions.php';
 
 $keyword = $_GET["keyword"];
@@ -68,4 +68,4 @@ $table_janji = query($query);
             <?php $i++; ?>
             <?php endforeach; ?>
 
-            </table> -->
+            </table>

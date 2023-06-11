@@ -3,7 +3,8 @@
 $conn = mysqli_connect('localhost', 'root',  '', 'tanyadoc');
 
 
-function query($query) {
+function query($query)
+{
   global $conn;
   $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
   $rows = [];
@@ -14,7 +15,8 @@ function query($query) {
 }
 
 //TAMBAH DATA//
-function tambah($data) {
+function tambah($data)
+{
   global $conn;
 
   $nama = htmlspecialchars($data["nama"]);
@@ -23,16 +25,10 @@ function tambah($data) {
   $spesialis = $data["spesialis"];
   $waktu = $data["waktu"];
 
-  //upload gambar
-  $gambar = upload();
-  if (!$gambar) {
-    return false;
-  }
-
 
   $query = "INSERT INTO table_janji
                        VALUES
-            (NULL, '$nama', '$email','$nik', '$spesialis', '$waktu', '$gambar')
+            (NULL, '$nama', '$email','$nik', '$spesialis', '$waktu')
             ";
 
   mysqli_query($conn, $query);
@@ -41,7 +37,8 @@ function tambah($data) {
 }
 
 //UPLOAD DATA//
-function upload() {
+function upload()
+{
 
   $namaFile = $_FILES['gambar']['name'];
   $ukuranFile = $_FILES['gambar']['size'];
@@ -87,14 +84,16 @@ function upload() {
 }
 
 //DELETE DATA
-function hapus($id) {
+function hapus($id)
+{
   global $conn;
   mysqli_query($conn, "DELETE  FROM table_janji WHERE id = $id");
   return mysqli_affected_rows($conn);
 }
 
 // UBAH DATA
-function ubah($data) {
+function ubah($data)
+{
   global $conn;
 
   $id = $data["id"];
@@ -103,21 +102,12 @@ function ubah($data) {
   $nik = htmlspecialchars($data["nik"]);
   $spesialis = $data["spesialis"];
   $waktu = $data["waktu"];
-  $gambarLama = htmlspecialchars($data["gambarLama"]);
-
-  // cek apakah user pilih gambar baru atau tidak
-  if ($_FILES['gambar']['error'] === 4) {
-    $gambar = $gambarLama;
-  } else {
-    $gambar = upload();
-  }
   $query = "UPDATE table_janji SET
             nama = '$nama',
             email = '$email',
             nik = '$nik',
             spesialis = '$spesialis',
-            waktu = '$waktu',
-            gambar = '$gambar'
+            waktu = '$waktu'
           WHERE id = $id
           ";
 
@@ -127,7 +117,8 @@ function ubah($data) {
 }
 
 //SEARCHING
-function cari($keyword) {
+function cari($keyword)
+{
   $query = "SELECT * FROM table_janji
               WHERE
               nama LIKE  '%$keyword%' OR
@@ -142,7 +133,8 @@ function cari($keyword) {
 }
 
 // REGISTRASI
-function registrasi($data) {
+function registrasi($data)
+{
   global $conn;
 
   $username = strtolower(stripslashes($data["username"]));
@@ -150,6 +142,7 @@ function registrasi($data) {
   $email = htmlspecialchars($data["email"]);
   $password = mysqli_real_escape_string($conn, $data["password"]);
   $password2 = mysqli_real_escape_string($conn, $data["password2"]);
+  $role = 'user';
 
   // cek username sudah ada atau belum
   if (query("SELECT * FROM usertable WHERE username='$username'")) {
@@ -178,7 +171,7 @@ function registrasi($data) {
   $password = password_hash($password, PASSWORD_DEFAULT);
 
   //tambhakan userbaru ke db
-  mysqli_query($conn, "INSERT INTO usertable VALUES(NULL, '$username', '$nama', '$email', '$password')");
+  mysqli_query($conn, "INSERT INTO usertable VALUES(NULL, '$username', '$nama', '$email', '$password', '$role')");
 
   return mysqli_affected_rows($conn);
 }
@@ -194,7 +187,7 @@ function login($data)
 
     //set session
     $_SESSION['login'] = true;
-    header('Location: janji.php');
+    header('Location: backend.php');
     exit;
   } else {
     return [

@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +14,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,7 +37,12 @@
             <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
             <a class="nav-link active" href="artikel.php">Artikel</a>
             <a class="nav-link active" href="regist.php">Daftar</a>
-            <a class="nav-link active bg-danger" style="color:white;" href="login.php">Login</a>
+            <?php if (isset($_SESSION['login'])) : ?>
+              <a class="nav-link active" href="janji.php">Janji</a>
+              <a class="nav-link active bg-danger" style="color:white;" href="logout.php">logout</a>
+            <?php else : ?>
+              <a class="nav-link active bg-success" style="color:white;" href="login.php">Login</a>
+            <?php endif; ?>
           </div>
         </div>
       </div>

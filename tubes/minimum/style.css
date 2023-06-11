@@ -1,6 +1,6 @@
 body,
 html {
-    background-color:#092679;
+    background-color: #092679;
     font-family: 'Playfair Display', serif;
     overflow-x: hidden !important;
     margin: 0px !important;
@@ -31,12 +31,13 @@ body {
 }
 
 .active:hover {
-    color:red !important;
+    color: red !important;
 }
+
 .bg-danger {
     border-radius: 10px;
     transition: 0.5s !important;
-    
+
 
 }
 
@@ -130,7 +131,7 @@ body {
 }
 
 /*buat janji*/
-.regist{
+.regist {
     margin: auto;
     width: 35%;
     height: 100vh;
@@ -147,15 +148,16 @@ body {
 
 .form-control {
     height: 80vh !important;
-    background-color:  #61a5c2!important;
+    background-color: #61a5c2 !important;
     text-align: center;
     transform: translateY(50px);
     border-radius: 20px !important;
 
 }
-.btn{
+
+.btn {
     transform: translateY(95px);
-    background-color:  #61a5c2!important;
+    background-color: #61a5c2 !important;
 
 
 
@@ -167,8 +169,8 @@ body {
 }
 
 .form-login {
-    height: 55vh !important;
-    background-color: #61a5c2!important;
+    height: 60vh !important;
+    background-color: #61a5c2 !important;
     text-align: center;
     transform: translateY(50px);
     border-radius: 50px !important;
@@ -186,35 +188,25 @@ form input {
 .teks {
     transform: translateY(30px);
 }
+
 .teks p {
     color: black;
 }
 
-.label teks{
+.label teks {
     transform: translateY(20px);
     font-size: 20px;
 }
 
 button {
-    transform: translateY(150px);
-    color: black!important;
+    transform: translateY(180px);
+    color: black !important;
 }
-.btn bg-primary{
+
+.btn bg-primary {
     transform: translateX(120px);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*FOOTER*/

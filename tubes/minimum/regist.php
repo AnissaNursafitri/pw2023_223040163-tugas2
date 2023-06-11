@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require 'functions.php';
 
 if (isset($_POST["submit"])) {
@@ -8,7 +11,6 @@ if (isset($_POST["submit"])) {
              alert('user baru berhasil ditambahkan!');
              document.location.href = 'login.php';
              </script>";
-        
     } else {
         echo mysqli_error($conn);
     }
@@ -34,7 +36,7 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-    
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #61a5c2 !important;">
         <div class="container-fluid">
@@ -47,7 +49,12 @@ if (isset($_POST["submit"])) {
                     <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
                     <a class="nav-link active" href="artikel.php">Artikel</a>
                     <a class="nav-link active" href="regist.php">Daftar</a>
-                    <a class="nav-link active bg-danger" style="color:white;" href="login.php">Login</a>
+                    <?php if (isset($_SESSION['login'])) : ?>
+                        <a class="nav-link active" href="janji.php">Janji</a>
+                        <a class="nav-link active bg-danger" style="color:white;" href="logout.php">Logout</a>
+                    <?php else : ?>
+                        <a class="nav-link active bg-success" style="color:white;" href="login.php">Login</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -94,7 +101,7 @@ if (isset($_POST["submit"])) {
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-   <!--Footer end-->
+    <!--Footer end-->
 
 
 </body>
