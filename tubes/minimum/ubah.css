@@ -8,18 +8,6 @@ body {
   box-sizing: border-box;
 }
 
-/* .row {
-    display: -ms-flexbox; 
-    display: flex;
-    -ms-flex-wrap: wrap; 
-    flex-wrap: wrap;
-    margin: 0 -16px;
-  } */
-
-/* .col-25 {
-    -ms-flex: 15%; 
-    flex: 15%;
-  } */
 
 .col-50 {
   -ms-flex: 10%;
@@ -61,12 +49,6 @@ label {
 
 
 
-/* .icon-container {
-    margin-bottom: 20px;
-    padding: 7px 0;
-    font-size: 24px;
-  } */
-
 .btn {
   background-color: blue;
   color: white;
@@ -100,7 +82,7 @@ span.price {
 /*DETAIL PSN*/
 .container {
   position: relative;
-  width: 50%;
+  width: 30%;
 }
 
 .image {
@@ -123,10 +105,13 @@ span.price {
 }
 
 .text-muted{
-  font-size: 100px;
+  font-size: 80px;
+ 
 }
 .h5{
-  font-size: 100px;
+  font-size: 80px;
+  text-align: center;
+ 
 }
 
 /*backend*/

@@ -76,7 +76,7 @@ require 'functions.php';
       <div class="col-sm-3 well">
         <div class="well">
           <p><a href="#">admin</a></p>
-          <img src="img/profile.jpeg" class="img-circle" height="65" width="65" alt="Avatar">
+          <img src="img/profile.jpeg" class="img-circle" height="65" width="65" alt="image">
         </div>
         <div class="well">
           <p><a href="#">hemm</a></p>
@@ -123,7 +123,7 @@ require 'functions.php';
           <div class="col-sm-9">
             <div class="well">
               <p>pasien spesialis mata</p>
-              <h2>12</h2>
+              <h2>7</h2>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ require 'functions.php';
           <div class="col-sm-9">
             <div class="well">
               <p>pasien spesialis gigi</p>
-              <h2>24</h2>
+              <h2>6</h2>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ require 'functions.php';
           <div class="col-sm-9">
             <div class="well">
               <p>pasien spesialis umum</p>
-              <h2>23</h2>
+              <h2>5</h2>
             </div>
           </div>
         </div>

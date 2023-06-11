@@ -11,17 +11,20 @@ require 'functions.php';
 
 //cek apakah tombol submit sudah ditekan atau belum
 if (isset($_POST["submit"])) {
-
-
-
-
+    $nama = $_POST["nama"];
+    $email = $_POST["email"];
+    $nik = $_POST["nik"];
+    $spesialis = $_POST["spesialis"];
+    $waktu = $_POST["waktu"];
+    $pesan = "Tanyadoc, nama saya " . $nama . ", saya mau konsultasi terkait keluhan yang saya hadapi, saya ingin bertemu " . $spesialis . " pada waktu " . $waktu;
 
     // cek apakah data berhasil ditambahkan atau tidak
     if (tambah($_POST) > 0) {
         echo "
             <script>
                 alert('data berhasil ditambahkan');
-                document.location.href = 'index.php';
+                document.location.href = 'https://wa.me/+6281223769986?text=" . $pesan . "';
+                // document.location.href = 'janji.php';
             </script>
         ";
     } else {
@@ -142,7 +145,7 @@ if (isset($_POST["submit"])) {
                             <br>
 
 
-                            <button type="file" name="submit" class="btn bg-primary mb-5"><a class="link active bg-primary" style="color: white;">Submit</a></button>
+                            <button type="file" name="submit" class="btn bg-primary mb-5">Submit</button>
 
                         </div>
                     </div>

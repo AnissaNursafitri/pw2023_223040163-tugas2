@@ -49,6 +49,12 @@ if (isset($_POST["submit"])) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<style>
+    body{
+      margin:0;
+      padding: 0;
+    }
+  </style>
 
 <body>
 

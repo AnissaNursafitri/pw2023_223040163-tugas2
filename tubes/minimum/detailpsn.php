@@ -13,17 +13,11 @@ $id = $_GET['id'];
 $psn = query("SELECT * FROM table_janji WHERE id = $id")[0];
 
 
-
-
-
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,8 +30,12 @@ $psn = query("SELECT * FROM table_janji WHERE id = $id")[0];
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -66,27 +64,24 @@ $psn = query("SELECT * FROM table_janji WHERE id = $id")[0];
   </nav>
 
   <!-- END NAVBAR-->
+
+  <!--detail pasien-->
   <h2>Detail Pasien</h2>
   <div class="container">
-    <!-- <form action="" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?= $psn["id"]; ?>">
-        <input type="hidden" name="gambarLama" value="<?= $psn["gambar"]; ?>">  -->
-    <img src="img/person.webp" alt="image" class="image"><br>
-
+    <img src="img/human.webp" alt="image" class="image"><br>
     <div class="col-md-4">
-      <div class="d-flex justify-content-center align-items-end flex-column h-100 text-right">
+      <div class="d-flex justify-content-center align-items-end flex-column h-100 text-left">
         <h2 class="text-muted">info</h2>
         <h5><?= $psn["nama"]; ?></h5>
         <h5><?= $psn["email"]; ?></h5>
         <h5><?= $psn["NIK"]; ?></h5>
         <h5><?= $psn["spesialis"]; ?></h5>
         <h5><?= $psn["waktu"]; ?></h5>
-         
+        <a href="ubah.php?id=<?= $psn["id"]; ?>" type="submit" name="submit" class="btn bg-primary">Ubah Data</a>
+
       </div>
         
     </div>
-
-    <!-- <img src="img/<?= $psn['gambar']; ?>" width="500"><br> -->
 
 
 

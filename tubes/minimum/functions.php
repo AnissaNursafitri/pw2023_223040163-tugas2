@@ -18,21 +18,13 @@ function query($query)
 function tambah($data)
 {
   global $conn;
-
   $nama = htmlspecialchars($data["nama"]);
   $email = htmlspecialchars($data["email"]);
   $nik = htmlspecialchars($data["nik"]);
   $spesialis = $data["spesialis"];
   $waktu = $data["waktu"];
-
-
-  $query = "INSERT INTO table_janji
-                       VALUES
-            (NULL, '$nama', '$email','$nik', '$spesialis', '$waktu')
-            ";
-
+  $query = "INSERT INTO table_janji VALUES (NULL, '$nama', '$email','$nik', '$spesialis', '$waktu')";
   mysqli_query($conn, $query);
-
   return mysqli_affected_rows($conn);
 }
 
